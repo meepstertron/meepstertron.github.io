@@ -1,0 +1,23 @@
+.button {
+    background-color: #005a14;
+    color: #ffffff;
+    border: none;
+    text-align: center;
+    padding: 10px 20px;
+  }
+
+  .rounded-corners {
+    border-radius: 5px;
+  }
+
+  * {
+    margin: 0;
+    font-family: Quicksand;
+   }
+ 
+body  {
+    background-image: linear-gradient(#A1CF6B,  #5fa13b);
+
+}
+   
+
