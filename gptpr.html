@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatGPT API Example</title>
+    <script>
+        function sendMessage() {
+            var message = document.getElementById("message").value;
+            
+            // Send request to the ChatGPT API
+            fetch('https://api.openai.com/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer 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 ' // Replace with your ChatGPT API key
+                },
+                body: JSON.stringify({
+                    'prompt': message,
+                    'max_tokens': 50 // Adjust the value as needed
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('API request failed.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                var reply = data.choices[0].text.trim();
+                document.getElementById("response").innerHTML = reply;
+                document.getElementById("error").innerHTML = ''; // Clear any previous error message
+            })
+            .catch(error => {
+                console.error(error);
+                document.getElementById("error").innerHTML = 'An error occurred. Please try again.'; // Display error message
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>ChatGPT API Example</h1>
+    <div>
+        <label for="message">Message:</label>
+        <input type="text" id="message" name="message">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+    <div id="response"></div>
+    <div id="error"></div>
+</body>
+</html>
