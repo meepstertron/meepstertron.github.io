@@ -1,19 +1,19 @@
 #idContainer {
-    background-color: #f2f2f2;
+    background-color: #242424;
     padding: 20px;
   }
   
   #txtOutput {
     font-size: 16px;
     border: none;
-    background-color: #fff;
+    background-color: #0e0e0e;
     margin-bottom: 10px;
   }
   
   #txtMsg {
     font-size: 16px;
     border: none;
-    background-color: #fff;
+    background-color: #0e0e0e;
     margin-bottom: 10px;
   }
   
