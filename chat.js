@@ -1,3 +1,7 @@
+const urlParams = new URLSearchParams(window.location.search);
+const key = urlParams.get('key');
+console.log(key);
+
 function Send() {
 
     var selLang = "en-US"
@@ -13,7 +17,7 @@ function Send() {
     oHttp.open("POST", "https://api.openai.com/v1/completions");
     oHttp.setRequestHeader("Accept", "application/json");
     oHttp.setRequestHeader("Content-Type", "application/json");
-    oHttp.setRequestHeader("Authorization", "Bearer " + "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")
+    oHttp.setRequestHeader("Authorization", "Bearer " + key)
 
     oHttp.onreadystatechange = function () {
         if (oHttp.readyState === 4) {
