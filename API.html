@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accessing Environment Variable</title>
+</head>
+<body>
+    <h1>Accessing Environment Variable Example</h1>
+    <p id="apiKeyValue">API Key: Loading...</p>
+
+    <script>
+        // Fetch the API key from the server
+        fetch('/api/getApiKey')
+            .then(response => response.json())
+            .then(data => {
+                const apiKeyValue = data.apiKey;
+                document.getElementById('apiKeyValue').textContent = 'API Key: ' + apiKeyValue;
+            })
+            .catch(error => {
+                console.error('Error retrieving API key:', error);
+                document.getElementById('apiKeyValue').textContent = 'API Key: Error retrieving API key';
+            });
+    </script>
+</body>
+</html>
