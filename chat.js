@@ -52,7 +52,7 @@ function Send() {
         }
     };
 
-    var sModel = "gpt-3.5-turbo-0613";
+    var sModel = "text-davinci-003";
     var iMaxTokens = 4096;
     var sUserId = "1";
     var dTemperature = 0.5;    
