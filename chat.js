@@ -6,10 +6,9 @@ var sQuestion = txtMsg.value;
     if (sQuestion == "") {
         alert("Type in your question!");
         txtMsg.focus();
-        return;
     }
 
-var send = function(textin){
+var Send = function(textin){
     fetch( `https://api.openai.com/v1/chat/completions`,
     {
       body: JSON.stringify({
