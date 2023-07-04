@@ -2,13 +2,14 @@ const urlParams = new URLSearchParams(window.location.search);
 const key = urlParams.get('key');
 console.log(key);
 
-var sQuestion = txtMsg.value;
+
+
+function Send() {
+    var sQuestion = txtMsg.value;
     if (sQuestion == "") {
         alert("Type in your question!");
         txtMsg.focus();
-    }
-
-var Send = function(textin){
+    }    
     fetch( `https://api.openai.com/v1/chat/completions`,
     {
       body: JSON.stringify({
