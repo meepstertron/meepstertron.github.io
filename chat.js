@@ -2,6 +2,13 @@ const urlParams = new URLSearchParams(window.location.search);
 const key = urlParams.get('key');
 console.log(key);
 
+var sQuestion = txtMsg.value;
+    if (sQuestion == "") {
+        alert("Type in your question!");
+        txtMsg.focus();
+        return;
+    }
+
 var send = function(textin){
     fetch( `https://api.openai.com/v1/chat/completions`,
     {
@@ -11,7 +18,7 @@ var send = function(textin){
             {role: “system”, content: “You are the chatbot of a website called moleculARweb, which provides educational material for chemistry using commodity augmented reality. You answer questions about the website, about chemistry, science, etc.”},
             {role: “user”, content: “What is the formula of acetic acid?”},
             {role: “assistant”, content: “The formula of acetic acid is CH3COOH”},
-            {role: “user”, content: textin}
+            {role: “user”, content: sQuestion}
           ],
           “temperature”: 0.3,
           “max_tokens”: 2000
