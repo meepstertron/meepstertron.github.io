@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -5,76 +6,110 @@
     <title>Über</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-</head>
-<style>
-    #grad1 {
-      height: 1000px;
-      width: 1000px;
-      background-color: red; /* For browsers that do not support gradients */
-      background-image: linear-gradient(to bottom right, rgb(0, 255, 76), rgb(255, 217, 0));
-      position: relative;
-      
-    }
-    #a {
-      height: 900px;
-      width: 900px;
-      background-color: rgb(8, 8, 8); /* For browsers that do not support gradients */
-    position: absolute;
-     top: 50%;
-     left: 50%;
-     margin: -500px 0 0 -500px;
-      
-    }
-    #b {
-        color: azure;
-        font-family: Rubik Mono One;
-        
-    }
-    #c {
-        padding: 70
-    }
-    #d {
-        color: azure;
-        font-family: sans-serif;
-    }
+    <script>
+        function copyToClipboard(textToCopy) {
+            // Create a temporary input element to hold the text
+            const tempInput = document.createElement('input');
+            tempInput.value = textToCopy;
+            document.body.appendChild(tempInput);
+    
+            // Select the text in the temporary input element
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999); // For mobile devices
+    
+            // Copy the selected text to the clipboard
+            document.execCommand('copy');
+    
+            // Remove the temporary input element
+            document.body.removeChild(tempInput);
+    
+            // Alert the user that the text has been copied
+            alert('Text has been copied to the clipboard: ' + textToCopy);
+        }
+    </script>
 
-    .gradient-button {
+
+    <style>
+        #grad1 {
+            height: 100vh;
+            width: 100vw;
+            background: linear-gradient(to bottom right, rgb(0, 255, 76), rgb(255, 217, 0));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #a {
+            background-color: rgb(8, 8, 8);
+            text-align: center;
+            height: 90%;
+            width: 90%;
+        }
+
+        #b {
+            color: azure;
+            font-family: "Rubik Mono One", monospace;
+        }
+
+        #c {
+            padding: 70px;
+        }
+
+        #d {
+            color: azure;
+            font-family: sans-serif;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .gradient-button {
             background: azure;
-            color: #fff;
-            padding: 20px 20px;
+            color: azure;
+            padding: 20px;
+            margin: 10px;
             border: none;
             cursor: pointer;
             transition: background 0.7s ease;
-            width: 25;
-            height: 25;
             border-radius: 50%;
-            display: inline-block;
             text-align: center;
-            line-height: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .gradient-button:hover {
             background: linear-gradient(to bottom right, rgb(0, 255, 76), rgb(255, 217, 0));
         }
-    
- 
-
-
     </style>
+</head>
 <body>
     <div id="grad1">
         <div id="a">
             <div id="c">
                 <h1 id="b">Hoi!</h1>
-                <h3 id="d">ich bin der Jan ich programiere gerne und spiele minecraft</h3>
-                <h3 id="d">du kannst mich unter verschiedenen Platformen ereichen</h3>
-                <div id="Social"><a class="gradient-button" href="https://discord.gg/nKP5VGPc">
-                    <i class="fab fa-discord" style="color: #000000; font-size: 40px; text-align: center;"></i>
-
-                </a></div>
+                <h3 id="d">Ich bin der Jan ich programiere gerne und spiele Minecraft</h3>
+                <h3 id="d">du kannst mich unter verschiedenen Plattformen erreichen</h3>
+                <div class="social-icons">
+                    <a class="gradient-button" href="https://github.com/meepstertron">
+                        <i class="fab fa-github" style="color: #000000; font-size: 40px;"></i>
+                    </a>
+                    <a class="gradient-button" href="https://www.reddit.com/user/Meepstertronyt">
+                        <i class="fab fa-reddit-alien" style="color: #000000; font-size: 40px;"></i>
+                    </a>
+                    <a class="gradient-button" href="mailto:meepstertron@gmail.com">
+                        <i class="fas fa-envelope" style="color: #000000; font-size: 40px;"></i>
+                    </a>
+                    <a class="gradient-button" href="tel:1234567890">
+                        <i class="fas fa-phone" style="color: #000000; font-size: 40px; text-decoration: none;"></i>
+                    </a>
+                    <a class="gradient-button" href="javascript:void(0);" onclick="copyToClipboard('.meepstertron')">
+                        <i class="fab fa-discord" style="color: #000000; font-size: 40px;"></i>
+                    </a>
+                </div>
             </div>
-            
-
         </div>
     </div>
 </body>
